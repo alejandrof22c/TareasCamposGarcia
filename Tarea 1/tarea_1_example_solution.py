@@ -1,5 +1,5 @@
-# La funcion invert case recibe un solo parametro "cadena" que es un string
-# y retorna lo siguiente
+# La funcion invert case recibe un solo parametro "Cadena" que es un string
+# y retorna lo siguiente:
 
 # Caso de éxito => 0
 
@@ -8,19 +8,19 @@
 # Error en caso de un string vacio => -48
 
 # Parametros
-# Entrada: Un string llamado cadena
-# Salida: La cadena invertida (exito) o None (error) y un codigo
+# Entrada: Un string llamado Cadena.
+# Salida: Un codigo y la cadena invertida (exito) o None (error).
 
-def invert_case(cadena):
+def invert_case(Cadena):
     invertida = ""
 
-    if not isinstance(cadena, str):
+    if not isinstance(Cadena, str):
         return -16, None
 
-    if cadena == "":
+    if Cadena == "":
         return -48, None
 
-    for i in cadena:
+    for i in Cadena:
         if not i.isalpha():
             return -32, None
         if i.isupper():
@@ -29,3 +29,42 @@ def invert_case(cadena):
             invertida += i.upper()
 
     return 0, invertida
+
+# La funcion numero_primo recibe un solo parametro "base" que es un integer
+# y retorna lo siguiente:
+
+# Errores esparados metodo de números primos
+# Error en caso de que no se pase un número entero => -64
+# Error en caso de que el número entero sea mayor a 100 => -80
+
+# Parametros
+# Entrada: Un integer llamado base.
+# Salida: Un codigo y un arreglo con todos los números primos
+# entre 1 y “base" (exito) o None (error).
+
+
+def numero_primo(base):
+    salida = []
+    primos = [
+        2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47,
+        53, 59, 61, 67, 71, 73, 79, 83, 89, 97
+        ]
+
+    if not isinstance(base, int):
+        return -64, None
+
+    # Es necesario agregar este caso en especifico ya que python
+    # toma el True booleano como un 1
+    if base is True:
+        return -64, None
+
+    if base > 100:
+        return -80, None
+
+    for i in primos:
+        if i <= base:
+            salida.append(i)
+        else:
+            break
+
+    return 0, salida
