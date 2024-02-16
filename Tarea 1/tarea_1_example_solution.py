@@ -29,3 +29,23 @@ def invert_case(cadena):
             invertida += i.upper()
 
     return 0, invertida
+
+# Errores esparados metodo de números primos
+# Error en caso de que no se pase un número entero => -64
+# Error en caso de que el número entero sea mayor a 100 => -80
+
+def numero_primo(numero):
+    primos = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
+    if  isinstance(numero, int):
+        if numero < 100:
+            Salida = []
+            for i in primos:
+                if i <= numero:
+                    Salida.append(i)
+                else:
+                    break
+        else:
+            return -80, None
+    else:
+        return -64, None
+    return 0, Salida
