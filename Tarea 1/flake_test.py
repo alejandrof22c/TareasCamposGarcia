@@ -1,5 +1,7 @@
+import math
+
 def factorial(num, forma):
-   fact = 1
+    fact = 1
     if forma == 0:
         i = 1
         while i < num:
@@ -9,6 +11,5 @@ def factorial(num, forma):
     if forma == 1:
         fact = math.factorial(num)
     return fact
-    break
 
 print("El factorial de 4 es", factorial(4,0))
