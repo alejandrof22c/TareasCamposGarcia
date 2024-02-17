@@ -14,12 +14,15 @@
 def invert_case(Cadena):
     invertida = ""
 
+    #Condicional para variables tipo string
     if not isinstance(Cadena, str):
         return -16, None
 
+    #Condicional para strings vacios
     if Cadena == "":
         return -48, None
 
+    # Bucle for recorre Cadena e invierte el character
     for i in Cadena:
         if not i.isalpha():
             return -32, None
@@ -50,6 +53,7 @@ def numero_primo(base):
         53, 59, 61, 67, 71, 73, 79, 83, 89, 97
         ]
 
+    #Condicional para variable no enteras
     if not isinstance(base, int):
         return -64, None
 
@@ -58,9 +62,12 @@ def numero_primo(base):
     if base is True:
         return -64, None
 
+    # Condicional para numeros mayores a 100
     if base > 100:
         return -80, None
-
+    
+    # Bucle for recorre el arreglo de numeros primos
+    # Agrega primos al arreglo salida hasta superar la base
     for i in primos:
         if i <= base:
             salida.append(i)
